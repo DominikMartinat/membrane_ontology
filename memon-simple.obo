@@ -1,0 +1,14 @@
+format-version: 1.2
+data-version: memon/releases/2024-12-02/memon-simple.owl
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: terms http://purl.org/dc/terms/ 
+ontology: memon/memon-simple
+property_value: owl:versionInfo "2024-12-02" xsd:string
+property_value: terms:description "None" xsd:string
+property_value: terms:license https://creativecommons.org/licenses/unspecified
+property_value: terms:title "Membrane Ontology" xsd:string
+
+[Term]
+id: MEMON:0000000
+name: root node
+
