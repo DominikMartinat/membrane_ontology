@@ -1,0 +1,28 @@
+# PURL configuration for http://purl.obolibrary.org/obo/memon
+
+idspace: MEMON
+base_url: /obo/memon
+
+products:
+- memon.owl: https://raw.githubusercontent.com/dominikmartinat/membrane_ontology/main/memon.owl
+- memon.obo: https://raw.githubusercontent.com/dominikmartinat/membrane_ontology/main/memon.obo
+
+term_browser: ontobee
+example_terms:
+- MEMON_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/dominikmartinat/membrane_ontology/v
+
+- prefix: /tracker/
+  replacement: https://github.com/dominikmartinat/membrane_ontology/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/MEMON?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/dominikmartinat/membrane_ontology/main/
+
