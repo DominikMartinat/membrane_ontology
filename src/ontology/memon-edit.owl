@@ -38,6 +38,18 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
@@ -83,6 +95,117 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000000">
         <rdfs:label xml:lang="en">root node</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A membrane model that is used in experiments.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:12Z</dce:date>
+        <rdfs:label xml:lang="en">experimental membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from lipids.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:52Z</dce:date>
+        <rdfs:comment>For example membrane consisting of DOPC.</rdfs:comment>
+        <rdfs:label xml:lang="en">artificial lipid membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:52:08Z</dce:date>
+        <rdfs:comment>For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.</rdfs:comment>
+        <rdfs:label xml:lang="en">chemical membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A molecular component from which a membrane model consists.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:53:09Z</dce:date>
+        <rdfs:label xml:lang="en">membrane model component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <obo:IAO_0000115>A membrane model that is used in computational predictions of membrane properties.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:57:54Z</dce:date>
+        <rdfs:label xml:lang="en">computational membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:23Z</dce:date>
+        <rdfs:label xml:lang="en">QSAR membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>Computational membrane model that is used in membrane simulations.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:59Z</dce:date>
+        <rdfs:comment>For example, a lipid bilayer assembled for molecular dynamics simulation.</rdfs:comment>
+        <rdfs:label xml:lang="en">simulated membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000115>A scientific model that is used to predict the properties of biological membranes.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T16:21:07Z</dce:date>
+        <rdfs:label xml:lang="en">membrane model</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
