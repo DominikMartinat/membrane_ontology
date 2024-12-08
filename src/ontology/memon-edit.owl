@@ -91,14 +91,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MEMON_0000000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000000">
-        <rdfs:label xml:lang="en">root node</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/MEMON_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000001">

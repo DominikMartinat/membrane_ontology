@@ -3,24 +3,248 @@
     "id" : "http://purl.obolibrary.org/obo/memon/memon-simple.json",
     "meta" : {
       "basicPropertyValues" : [ {
-        "pred" : "http://purl.org/dc/terms/description",
-        "val" : "None"
+        "pred" : "http://purl.org/dc/elements/1.1/description",
+        "val" : "An ontology about cell membranes and their models"
       }, {
         "pred" : "http://purl.org/dc/terms/license",
-        "val" : "https://creativecommons.org/licenses/unspecified"
+        "val" : "https://creativecommons.org/publicdomain/zero/1.0/"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "Membrane Ontology"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2024-12-02"
+        "val" : "2024-12-08"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-02/memon-simple.json"
+      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-08/memon-simple.json"
     },
     "nodes" : [ {
-      "id" : "http://purl.obolibrary.org/obo/MEMON_0000000",
-      "lbl" : "root node",
-      "type" : "CLASS"
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000001",
+      "lbl" : "experimental membrane model",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A membrane model that is used in experiments."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:48:12Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000002",
+      "lbl" : "artificial lipid membrane",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An experimental membrane model that is prepared from lipids."
+        },
+        "comments" : [ "For example membrane consisting of DOPC." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:48:52Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000003",
+      "lbl" : "chemical membrane model",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior."
+        },
+        "comments" : [ "For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:52:08Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000004",
+      "lbl" : "membrane model component",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A molecular component from which a membrane model consists."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:53:09Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000005",
+      "lbl" : "computational membrane model",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A membrane model that is used in computational predictions of membrane properties."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:57:54Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000006",
+      "lbl" : "QSAR membrane model",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:58:23Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000007",
+      "lbl" : "simulated membrane",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "Computational membrane model that is used in membrane simulations."
+        },
+        "comments" : [ "For example, a lipid bilayer assembled for molecular dynamics simulation." ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T15:58:59Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/MEMON_0000008",
+      "lbl" : "membrane model",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A scientific model that is used to predict the properties of biological membranes."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/elements/1.1/creator",
+          "val" : "Dominik Martinát"
+        }, {
+          "pred" : "http://purl.org/dc/elements/1.1/date",
+          "val" : "2024-12-08T16:21:07Z"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "lbl" : "has component",
+      "type" : "PROPERTY",
+      "propertyType" : "OBJECT",
+      "meta" : {
+        "definition" : {
+          "val" : "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type."
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/ro/subsets#ro-eco" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
+          "val" : "http://purl.obolibrary.org/obo/IAO_0000125"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000232",
+          "val" : "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0001900",
+          "val" : "http://purl.obolibrary.org/obo/RO_0001901"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://ontologydesignpatterns.org/wiki/Submissions:Componency"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000111",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000114",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000115",
+      "lbl" : "definition",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION",
+      "meta" : {
+        "definition" : {
+          "val" : "The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions."
+        },
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000111",
+          "val" : "definition"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
+          "val" : "http://purl.obolibrary.org/obo/IAO_0000122"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "2012-04-05: \nBarry Smith\n\nThe official OBI definition, explaining the meaning of a class or property: 'Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions'  is terrible.\n\nCan you fix to something like:\n\nA statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.\n\nAlan Ruttenberg\n\nYour proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can't be evaluated by those criteria. \n\nOn the specifics of the proposed definition:\n\nWe don't have definitions of 'meaning' or 'expression' or 'property'. For 'reference' in the intended sense I think we use the term 'denotation'. For 'expression', I think we you mean symbol, or identifier. For 'meaning' it differs for class and property. For class we want documentation that let's the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let's the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The 'intended reader' part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. \n\nPersonally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. \n\nWe also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  "
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
+          "val" : "PERSON:Daniel Schober"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000119",
+          "val" : "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000116",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000117",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000119",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/IAO_0000232",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0001900",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/ro/subsets#ro-eco",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/elements/1.1/creator",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/elements/1.1/date",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://purl.org/dc/elements/1.1/description",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
     }, {
       "id" : "http://purl.org/dc/terms/description",
       "lbl" : "description",
@@ -40,6 +264,47 @@
       "id" : "http://www.geneontology.org/formats/oboInOwl#SubsetProperty",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#inSubset",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    } ],
+    "edges" : [ {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000001",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000008"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000001",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000004"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000002",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000003",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000001"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000004",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002180",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000004"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000005",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000008"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000006",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000005"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MEMON_0000007",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MEMON_0000005"
     } ]
   } ]
 }
