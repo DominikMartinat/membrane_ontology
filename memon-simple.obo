@@ -1,12 +1,12 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-08/memon-simple.owl
+data-version: memon/releases/2024-12-09/memon-simple.owl
 subsetdef: ro-eco ""
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: memon/memon-simple
 property_value: dc:description "An ontology about cell membranes and their models" xsd:string
-property_value: owl:versionInfo "2024-12-08" xsd:string
+property_value: owl:versionInfo "2024-12-09" xsd:string
 property_value: terms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: terms:title "Membrane Ontology" xsd:string
 

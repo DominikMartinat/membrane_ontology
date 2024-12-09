@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                67add3566cca31fb3e04f46234a110b840adf410d12f8f2f9850059be70a977d
+CONFIG_HASH=                a21fce84330934792fb0f403c83092b44dd274f0e9714cf225eaf5d11d38af0b
 
 
 # ----------------------------------------
@@ -376,6 +376,10 @@ $(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/%.owl $(IMPORTDIR)/%_terms_combined.txt
 
 .PRECIOUS: $(IMPORTDIR)/%_import.owl
 
+## Module for ontology: go
+
+$(IMPORTDIR)/go_import.owl: $(MIRRORDIR)/go.owl
+	echo "ERROR: You have configured your default module type to be custom; this behavior needs to be overwritten in memon.Makefile!" && false
 
 .PHONY: refresh-imports
 refresh-imports:

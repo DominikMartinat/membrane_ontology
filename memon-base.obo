@@ -1,5 +1,6 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-08/memon-base.owl
+data-version: memon/releases/2024-12-09/memon-base.owl
+idspace: cito http://purl.org/spar/cito/ 
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
@@ -11,7 +12,7 @@ property_value: dce:description "An ontology about cell membranes and their mode
 property_value: dce:type IAO:8000001
 property_value: dcterms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: dcterms:title "Membrane Ontology" xsd:string
-property_value: owl:versionInfo "2024-12-08" xsd:string
+property_value: owl:versionInfo "2024-12-09" xsd:string
 
 [Term]
 id: MEMON:0000001

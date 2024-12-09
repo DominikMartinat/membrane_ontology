@@ -12,11 +12,11 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/memon/memon-simple.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-08/memon-simple.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-09/memon-simple.owl"/>
         <dc:description>An ontology about cell membranes and their models</dc:description>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
         <terms:title>Membrane Ontology</terms:title>
-        <owl:versionInfo>2024-12-08</owl:versionInfo>
+        <owl:versionInfo>2024-12-09</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -161,12 +161,6 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://www.geneontology.org/formats/oboInOwl#SubsetProperty -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
     
 
 
