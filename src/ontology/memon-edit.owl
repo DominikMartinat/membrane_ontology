@@ -1,49 +1,209 @@
-
-Prefix(:=<http://purl.obolibrary.org/obo/memon.owl#>)
-Prefix(dce:=<http://purl.org/dc/elements/1.1/>)
-Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
-Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
-Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
-Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
-Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
-Prefix(dcterms:=<http://purl.org/dc/terms/>)
-
-
-Ontology(<http://purl.obolibrary.org/obo/memon.owl>
-
-
-Import(<http://purl.obolibrary.org/obo/memon/imports/ro_import.owl>)
-
-Import(<http://purl.obolibrary.org/obo/memon/imports/cob_import.owl>)
-
-
-
-Annotation(dcterms:description "None")
-Annotation(dcterms:license <https://creativecommons.org/licenses/unspecified>)
-Annotation(dcterms:title "Membrane Ontology")
-
-
-Declaration(Class(<http://purl.obolibrary.org/obo/MEMON_0000000>))
-Declaration(AnnotationProperty(dcterms:description))
-Declaration(AnnotationProperty(dcterms:license))
-Declaration(AnnotationProperty(dcterms:title))
-
-############################
-#   Annotation Properties
-############################
-
-AnnotationAssertion(rdfs:label dcterms:description "description")
-AnnotationAssertion(rdfs:label dcterms:license "license")
-AnnotationAssertion(rdfs:label dcterms:title "title")
-
-############################
-#   Classes
-############################
-
-# Class: <http://purl.obolibrary.org/obo/MEMON_0000000> (root node)
-
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MEMON_0000000> "root node"@en)
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/memon.owl#"
+     xml:base="http://purl.obolibrary.org/obo/memon.owl"
+     xmlns:go="http://purl.obolibrary.org/obo/go#"
+     xmlns:dce="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/memon.owl">
+        <owl:versionIRI rdf:resource="http://example.com/memon/2024-12-9/memon.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/memon/imports/cob_import.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/memon/imports/go_import.owl"/>
+        <owl:imports rdf:resource="http://purl.obolibrary.org/obo/memon/imports/ro_import.owl"/>
+        <dce:description>An ontology about cell membranes and their models</dce:description>
+        <dcterms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
+        <dcterms:title>Membrane Ontology</dcterms:title>
+    </owl:Ontology>
+    
 
 
-)
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:label>description</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+        <rdfs:label>license</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:label>title</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A membrane model that is used in experiments.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:12Z</dce:date>
+        <rdfs:label xml:lang="en">experimental membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from lipids.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:52Z</dce:date>
+        <rdfs:comment>For example membrane consisting of DOPC.</rdfs:comment>
+        <rdfs:label xml:lang="en">artificial lipid membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:52:08Z</dce:date>
+        <rdfs:comment>For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.</rdfs:comment>
+        <rdfs:label xml:lang="en">chemical membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A molecular component from which a membrane model consists.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:53:09Z</dce:date>
+        <rdfs:label xml:lang="en">membrane model component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <obo:IAO_0000115>A membrane model that is used in computational predictions of membrane properties.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:57:54Z</dce:date>
+        <rdfs:label xml:lang="en">computational membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:23Z</dce:date>
+        <rdfs:label xml:lang="en">QSAR membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>Computational membrane model that is used in membrane simulations.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:59Z</dce:date>
+        <rdfs:comment>For example, a lipid bilayer assembled for molecular dynamics simulation.</rdfs:comment>
+        <rdfs:label xml:lang="en">simulated membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <obo:IAO_0000115>A scientific model that is used to predict the properties of biological membranes.</obo:IAO_0000115>
+        <dce:creator>Dominik Martinát</dce:creator>
+        <dce:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T16:21:07Z</dce:date>
+        <rdfs:label xml:lang="en">membrane model</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 

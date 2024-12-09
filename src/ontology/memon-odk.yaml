@@ -16,6 +16,8 @@ import_group:
   products: 
     - id: ro
     - id: cob
+    - id: go
+      module_type: custom
 robot_java_args: '-Xmx6G'
 robot_report:
   use_labels: TRUE

@@ -1,11 +1,29 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-02/memon-full.owl
+data-version: memon/releases/2024-12-09/memon-full.owl
+subsetdef: gocheck_do_not_annotate ""
+subsetdef: goslim_agr ""
+subsetdef: goslim_candida ""
+subsetdef: goslim_chembl ""
+subsetdef: goslim_drosophila ""
+subsetdef: goslim_euk_cellular_processes_ribbon ""
+subsetdef: goslim_flybase_ribbon ""
+subsetdef: goslim_generic ""
+subsetdef: goslim_metagenomics ""
+subsetdef: goslim_mouse ""
+subsetdef: goslim_pir ""
+subsetdef: goslim_plant ""
+subsetdef: goslim_plant_ribbon ""
+subsetdef: goslim_prokaryote ""
+subsetdef: goslim_prokaryote_ribbon ""
+subsetdef: goslim_synapse ""
+subsetdef: goslim_yeast ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
+idspace: cito http://purl.org/spar/cito/ 
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
@@ -15,10 +33,10 @@ idspace: swrl http://www.w3.org/2003/11/swrl#
 idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
 idspace: swrlb http://www.w3.org/2003/11/swrlb# 
 ontology: memon/memon-full
-property_value: dcterms:description "None" xsd:string
-property_value: dcterms:license https://creativecommons.org/licenses/unspecified
+property_value: dce:description "An ontology about cell membranes and their models" xsd:string
+property_value: dcterms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: dcterms:title "Membrane Ontology" xsd:string
-property_value: owl:versionInfo "2024-12-02" xsd:string
+property_value: owl:versionInfo "2024-12-09" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -99,6 +117,61 @@ def: "An independent continuant that is spatially extended whose identity is ind
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
+id: GO:0000139
+name: Golgi membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the compartments of the Golgi apparatus." [GOC:mah]
+synonym: "Golgi apparatus membrane" EXACT []
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0000329
+name: fungal-type vacuole membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vacuole, the shape of which correlates with cell cycle phase. The membrane separates its contents from the cytoplasm of the cell. An example of this structure is found in Saccharomyces cerevisiae." [GOC:krc, GOC:mtg_sensu]
+synonym: "fungal-type vacuolar membrane" RELATED []
+synonym: "membrane of vacuole with cell cycle-correlated morphology" EXACT []
+is_a: GO:0098852 ! lytic vacuole membrane
+
+[Term]
+id: GO:0000421
+name: autophagosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an autophagosome, a double-membrane-bounded vesicle in which endogenous cellular material is sequestered." [GOC:autophagy, GOC:isa_complete]
+synonym: "autophagic vacuole membrane" EXACT [GOC:autophagy]
+is_a: GO:0005774 ! vacuolar membrane
+
+[Term]
+id: GO:0001533
+name: cornified envelope
+namespace: cellular_component
+def: "A type of plasma membrane that has been modified through addition of distinct intracellular and extracellular components, including ceramide, found in cornifying epithelial cells (corneocytes)." [GOC:add, PMID:11112355, PMID:11590230, PMID:15803139]
+is_a: GO:0005886 ! plasma membrane
+
+[Term]
+id: GO:0002079
+name: inner acrosomal membrane
+namespace: cellular_component
+def: "The acrosomal membrane region that underlies the acrosomal vesicle and is located toward the sperm nucleus. This region is responsible for molecular interactions allowing the sperm to penetrate the zona pellucida and fuses with the egg plasma membrane." [GOC:dph, PMID:3899643, PMID:8936405]
+comment: Note that this term is not a descendant of 'organelle inner membrane ; GO:0019866' because the outer acrosomal membrane is a portion of the acrosomal membrane; the latter is a single lipid bilayer.
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+
+[Term]
+id: GO:0002080
+name: acrosomal membrane
+namespace: cellular_component
+def: "The membrane that surrounds the acrosomal lumen. The acrosome is a special type of lysosome in the head of a spermatozoon that contains acid hydrolases and is concerned with the breakdown of the outer membrane of the ovum during fertilization." [GOC:dph]
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0002081
+name: outer acrosomal membrane
+namespace: cellular_component
+def: "The acrosomal membrane region that underlies the plasma membrane of the sperm. This membrane fuses with the sperm plasma membrane as part of the acrosome reaction." [GOC:dph, PMID:8936405]
+comment: Note that this term is not a descendant of 'organelle outer membrane ; GO:0031968' because the outer acrosomal membrane is a portion of the acrosomal membrane; the latter is a single lipid bilayer.
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+
+[Term]
 id: GO:0003674
 name: gene product or complex activity
 name: molecular_function
@@ -108,6 +181,158 @@ comment: This is the same as GO molecular function
 synonym: "molecular function" EXACT []
 is_a: BFO:0000015 ! process
 disjoint_from: GO:0008150 ! biological_process
+
+[Term]
+id: GO:0005628
+name: prospore membrane
+namespace: cellular_component
+def: "The prospore membrane is a double-membraned structure that extends from the cytoplasmic face of the spindle pole bodies to encompass the spindle pole bodies and the four nuclear lobes that are formed during meiosis. It helps isolate the meiotic nuclei from the cytoplasm during spore formation and serves as a foundation for the formation of the spore walls. An example of this component is found in Schizosaccharomyces pombe." [ISBN:0879693649]
+synonym: "ascospore-type prospore membrane" EXACT [GOC:mah]
+synonym: "forespore membrane" RELATED []
+synonym: "FSM" EXACT []
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0005637
+name: nuclear inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the nuclear envelope." [GOC:ma]
+synonym: "inner envelope" BROAD []
+synonym: "inner nuclear membrane" EXACT [GOC:kmv, GOC:vw, PMID:21411627]
+synonym: "nucleus inner membrane" EXACT []
+xref: NIF_Subcellular:sao1612527463
+is_a: GO:0019866 ! organelle inner membrane
+is_a: GO:0031965 ! nuclear membrane
+
+[Term]
+id: GO:0005640
+name: nuclear outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the nuclear envelope; continuous with the endoplasmic reticulum of the cell and sometimes studded with ribosomes." [ISBN:0198547684]
+synonym: "nucleus outer envelope" EXACT []
+synonym: "perinuclear membrane" EXACT []
+xref: NIF_Subcellular:sao1617136075
+is_a: GO:0031965 ! nuclear membrane
+is_a: GO:0031968 ! organelle outer membrane
+
+[Term]
+id: GO:0005642
+name: annulate lamellae
+namespace: cellular_component
+def: "Stacks of endoplasmic reticulum (ER) membranes containing a high density of nuclear pores, thought to form from excess nuclear membrane components, that have been described in a number of different cells. Annulate lamellar membranes are continuous with and embedded within the ER." [PMID:12631728]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0005741
+name: mitochondrial outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the mitochondrial envelope." [GOC:ai]
+synonym: "mitochondrion outer membrane" EXACT []
+synonym: "outer mitochondrial membrane" EXACT []
+synonym: "outer mitochondrion membrane" EXACT []
+xref: NIF_Subcellular:sao1289741256
+xref: Wikipedia:Outer_mitochondrial_membrane
+is_a: GO:0031966 ! mitochondrial membrane
+is_a: GO:0031968 ! organelle outer membrane
+
+[Term]
+id: GO:0005743
+name: mitochondrial inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the mitochondrial envelope. It is highly folded to form cristae." [GOC:ai]
+synonym: "inner mitochondrial membrane" EXACT []
+synonym: "inner mitochondrion membrane" EXACT []
+synonym: "mitochondrion inner membrane" EXACT []
+xref: NIF_Subcellular:sao1371347282
+xref: Wikipedia:Inner_mitochondrial_membrane
+is_a: GO:0019866 ! organelle inner membrane
+is_a: GO:0031966 ! mitochondrial membrane
+
+[Term]
+id: GO:0005765
+name: lysosomal membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the lysosome and separating its contents from the cell cytoplasm." [GOC:ai]
+synonym: "lysosome membrane" EXACT []
+is_a: GO:0098852 ! lytic vacuole membrane
+
+[Term]
+id: GO:0005774
+name: vacuolar membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the vacuole and separating its contents from the cytoplasm of the cell." [GOC:ai]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0005778
+name: peroxisomal membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a peroxisome." [GOC:mah]
+synonym: "peroxisome membrane" EXACT []
+is_a: GO:0031903 ! microbody membrane
+
+[Term]
+id: GO:0005789
+name: endoplasmic reticulum membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the endoplasmic reticulum." [GOC:mah]
+synonym: "ER membrane" EXACT []
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0005886
+name: plasma membrane
+namespace: cellular_component
+alt_id: GO:0005887
+alt_id: GO:0005904
+def: "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins." [ISBN:0716731363]
+subset: goslim_agr
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
+subset: goslim_generic
+subset: goslim_metagenomics
+subset: goslim_mouse
+subset: goslim_plant
+subset: goslim_plant_ribbon
+subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
+subset: goslim_yeast
+synonym: "bacterial inner membrane" NARROW []
+synonym: "cell membrane" EXACT []
+synonym: "cellular membrane" EXACT [NIF_Subcellular:sao6433132645]
+synonym: "cytoplasmic membrane" EXACT []
+synonym: "inner endospore membrane" NARROW []
+synonym: "integral component of plasma membrane" NARROW []
+synonym: "integral to plasma membrane" NARROW []
+synonym: "juxtamembrane" BROAD []
+synonym: "plasma membrane lipid bilayer" NARROW [GOC:mah]
+synonym: "plasmalemma" EXACT []
+xref: NIF_Subcellular:sao1663586795
+xref: Wikipedia:Cell_membrane
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0005901
+name: caveola
+namespace: cellular_component
+alt_id: GO:0016599
+def: "A membrane raft that forms small pit, depression, or invagination that communicates with the outside of a cell and extends inward, indenting the cytoplasm and the cell membrane. Examples include flask-shaped invaginations of the plasma membrane in adipocytes associated with caveolin proteins, and minute pits or incuppings of the cell membrane formed during pinocytosis. Caveolae may be pinched off to form free vesicles within the cytoplasm." [GOC:mah, ISBN:0721662544, PMID:16645198]
+synonym: "caveolae" EXACT []
+synonym: "caveolar membrane" RELATED []
+xref: Wikipedia:Caveolae
+is_a: GO:0044853 ! plasma membrane raft
+
+[Term]
+id: GO:0005905
+name: clathrin-coated pit
+namespace: cellular_component
+def: "A part of the endomembrane system in the form of an invagination of a membrane upon which a clathrin coat forms, and that can be converted by vesicle budding into a clathrin-coated vesicle. Coated pits form on the plasma membrane, where they are involved in receptor-mediated selective transport of many proteins and other macromolecules across the cell membrane, in the trans-Golgi network, and on some endosomes." [GOC:mah, ISBN:0198506732, NIF_Subcellular:sao1969557946, PMID:10559856, PMID:17284835]
+synonym: "coated pit" EXACT [GOC:bf]
+xref: NIF_Subcellular:sao1969557946
+is_a: GO:0016020 ! membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26136" xsd:anyURI
 
 [Term]
 id: GO:0008150
@@ -127,6 +352,179 @@ created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
 [Term]
+id: GO:0009279
+name: cell outer membrane
+namespace: cellular_component
+def: "A lipid bilayer that forms the outermost membrane of the cell envelope; enriched in polysaccharide and protein; the outer leaflet of the membrane contains specific lipopolysaccharide structures." [GOC:md, GOC:mtg_sensu, ISBN:0135712254]
+comment: To annotate the plasma (cytoplasmic) membrane, see instead GO:0005886.
+subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
+synonym: "outer membrane of cell" EXACT []
+is_a: GO:0019867 ! outer membrane
+
+[Term]
+id: GO:0009527
+name: plastid outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the plastid envelope." [GOC:lr]
+is_a: GO:0031968 ! organelle outer membrane
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0009528
+name: plastid inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the plastid envelope; also faces the plastid stroma." [GOC:lr]
+is_a: GO:0019866 ! organelle inner membrane
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0009535
+name: chloroplast thylakoid membrane
+namespace: cellular_component
+def: "The pigmented membrane of a chloroplast thylakoid. An example of this component is found in Arabidopsis thaliana." [GOC:lr, GOC:mtg_sensu]
+is_a: GO:0031968 ! organelle outer membrane
+is_a: GO:0055035 ! plastid thylakoid membrane
+
+[Term]
+id: GO:0009705
+name: plant-type vacuole membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vacuole that retains the same shape regardless of cell cycle phase. The membrane separates its contents from the cytoplasm of the cell. An example of this component is found in Arabidopsis thaliana." [GOC:mtg_sensu, ISBN:0471245208]
+synonym: "membrane of vacuole with cell cycle-independent morphology" EXACT []
+synonym: "tonoplast" EXACT []
+synonym: "vacuolar membrane" BROAD []
+is_a: GO:0005774 ! vacuolar membrane
+
+[Term]
+id: GO:0009706
+name: chloroplast inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the chloroplast envelope; also faces the chloroplast stroma." [GOC:tb]
+synonym: "chloroplast inner envelope" EXACT []
+is_a: GO:0009528 ! plastid inner membrane
+is_a: GO:0031969 ! chloroplast membrane
+
+[Term]
+id: GO:0009707
+name: chloroplast outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the chloroplast envelope." [GOC:tb]
+synonym: "chloroplast outer envelope" EXACT []
+is_a: GO:0009527 ! plastid outer membrane
+is_a: GO:0031969 ! chloroplast membrane
+
+[Term]
+id: GO:0009925
+name: basal plasma membrane
+namespace: cellular_component
+def: "The region of the plasma membrane located at the basal end of the cell. Often used in reference to animal polarized epithelial membranes, where the basal membrane is the part attached to the extracellular matrix, or in plant cells, where the basal membrane is defined with respect to the zygotic axis." [GOC:go_curators]
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0010008
+name: endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an endosome." [GOC:mah]
+synonym: "endosomal membrane" EXACT [NIF_Subcellular:sao978443756]
+xref: NIF_Subcellular:sao978443756
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0012506
+name: vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any membrane-bounded vesicle in the cell." [GOC:mah, GOC:vesicle]
+xref: NIF_Subcellular:sao1153182838
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0012507
+name: ER to Golgi transport vesicle membrane
+namespace: cellular_component
+alt_id: GO:0030664
+def: "The lipid bilayer surrounding a vesicle transporting substances from the endoplasmic reticulum to the Golgi." [GOC:ai, GOC:ascb_2009, GOC:dph, GOC:tb]
+synonym: "COPII coated vesicle membrane" EXACT []
+synonym: "endoplasmic reticulum to Golgi transport vesicle membrane" EXACT []
+synonym: "endoplasmic reticulum-Golgi transport vesicle membrane" EXACT []
+synonym: "ER to Golgi constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "ER-Golgi transport vesicle membrane" EXACT []
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030662 ! coated vesicle membrane
+
+[Term]
+id: GO:0012508
+name: Golgi to ER transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vesicle transporting substances from the Golgi to the ER." [GOC:ai]
+synonym: "Golgi to endoplasmic reticulum transport vesicle membrane" EXACT []
+synonym: "Golgi to ER constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "Golgi-endoplasmic reticulum transport vesicle membrane" EXACT []
+synonym: "Golgi-ER transport vesicle membrane" EXACT []
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030663 ! COPI-coated vesicle membrane
+
+[Term]
+id: GO:0012509
+name: inter-Golgi transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vesicle transporting substances within the Golgi." [GOC:ai]
+synonym: "inter-Golgi transport constitutive secretory pathway transport vesicle membrane" EXACT []
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030663 ! COPI-coated vesicle membrane
+
+[Term]
+id: GO:0012510
+name: trans-Golgi network transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vesicle transporting substances between the trans-Golgi network and other parts of the cell." [GOC:ai]
+synonym: "TGN transport vesicle membrane" EXACT []
+synonym: "trans-Golgi network constitutive secretory pathway transport vesicle membrane" EXACT []
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030660 ! Golgi-associated vesicle membrane
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+
+[Term]
+id: GO:0014701
+name: junctional sarcoplasmic reticulum membrane
+namespace: cellular_component
+def: "The part of the sarcoplasmic reticulum membrane that contains calcium release channels, is devoted to calcium release and is juxtaposed to transverse tubule membrane. The junctional sarcoplasmic reticulum membrane consists of the junctional region of the terminal cisterna membrane." [GOC:mtg_muscle]
+is_a: GO:0033017 ! sarcoplasmic reticulum membrane
+
+[Term]
+id: GO:0014702
+name: free sarcoplasmic reticulum membrane
+namespace: cellular_component
+def: "The part of the sarcoplasmic reticulum membrane that contains calcium pumps and is devoted to calcium uptake. The free sarcoplasmic reticulum membrane consists of the longitudinal sarcoplasmic reticulum membrane and the non-junctional region of the terminal cisterna membrane." [GOC:mtg_muscle]
+is_a: GO:0033017 ! sarcoplasmic reticulum membrane
+
+[Term]
+id: GO:0016020
+name: membrane
+namespace: cellular_component
+alt_id: GO:0016021
+alt_id: GO:0098589
+alt_id: GO:0098805
+def: "A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
+subset: goslim_candida
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
+subset: goslim_metagenomics
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_yeast
+synonym: "integral component of membrane" NARROW []
+synonym: "integral to membrane" NARROW []
+synonym: "membrane region" NARROW []
+synonym: "region of membrane" NARROW []
+synonym: "transmembrane" RELATED [GOC:mah]
+synonym: "whole membrane" NARROW []
+xref: Wikipedia:Biological_membrane
+xref: Wikipedia:Transmembrane_protein
+creation_date: 2014-03-06T11:37:54Z
+
+[Term]
 id: GO:0016301
 name: kinase activity
 def: "Catalysis of the transfer of a phosphate group, usually from ATP, to a substrate molecule." [ISBN:0198506732]
@@ -135,6 +533,1579 @@ synonym: "phosphokinase activity" EXACT []
 xref: Reactome:R-HSA-6788855 "FN3KRP phosphorylates PsiAm, RibAm"
 xref: Reactome:R-HSA-6788867 "FN3K phosphorylates ketosamines"
 is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0016323
+name: basolateral plasma membrane
+namespace: cellular_component
+def: "The region of the plasma membrane that includes the basal end and sides of the cell. Often used in reference to animal polarized epithelial membranes, where the basal membrane is the part attached to the extracellular matrix, or in plant cells, where the basal membrane is defined with respect to the zygotic axis." [GOC:go_curators]
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0016324
+name: apical plasma membrane
+namespace: cellular_component
+def: "The region of the plasma membrane located at the apical end of the cell." [GOC:curators]
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0016327
+name: apicolateral plasma membrane
+namespace: cellular_component
+def: "The apical end of the lateral plasma membrane of epithelial cells." [GOC:hb]
+synonym: "apical lateral plasma membrane" EXACT [PMID:24496625]
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0019866
+name: organelle inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of an organelle envelope; usually highly selective to most ions and metabolites." [GOC:mah]
+comment: See also the cellular component term 'outer membrane ; GO:0019867'.
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0019867
+name: outer membrane
+namespace: cellular_component
+def: "The external membrane of Gram-negative bacteria or certain organelles such as mitochondria and chloroplasts; freely permeable to most ions and metabolites." [GOC:go_curators]
+subset: goslim_metagenomics
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0020018
+name: ciliary pocket membrane
+namespace: cellular_component
+def: "That part of the plasma membrane found in the ciliary pocket (also called flagellar pocket)." [GOC:cilia, GOC:mb]
+comment: Note that cilia and eukaryotic flagella are deemed to be equivalent. In this case community usage is mostly 'flagellar', but the primary term name reflects the cilium parentage.
+synonym: "cilial pocket membrane" EXACT []
+synonym: "cilium pocket membrane" EXACT []
+synonym: "flagellar pocket membrane" EXACT []
+is_a: GO:0060170 ! ciliary membrane
+
+[Term]
+id: GO:0030658
+name: transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a transport vesicle." [GOC:mah]
+synonym: "constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "secretory vesicle membrane" BROAD []
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030659
+name: cytoplasmic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a cytoplasmic vesicle." [GOC:mah]
+is_a: GO:0012506 ! vesicle membrane
+
+[Term]
+id: GO:0030660
+name: Golgi-associated vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a vesicle associated with the Golgi apparatus." [GOC:mah]
+synonym: "Golgi vesicle membrane" RELATED []
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030661
+name: chitosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a chitosome." [GOC:mah]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030662
+name: coated vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a coated vesicle." [GOC:mah]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030663
+name: COPI-coated vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a COPI-coated vesicle." [GOC:mah]
+synonym: "COPI coated vesicle membrane" EXACT [GOC:sl]
+is_a: GO:0030660 ! Golgi-associated vesicle membrane
+is_a: GO:0030662 ! coated vesicle membrane
+
+[Term]
+id: GO:0030665
+name: clathrin-coated vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-coated vesicle." [GOC:mah]
+synonym: "clathrin coated vesicle membrane" NARROW [GOC:sl]
+is_a: GO:0030662 ! coated vesicle membrane
+
+[Term]
+id: GO:0030666
+name: endocytic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an endocytic vesicle." [GOC:mah]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030667
+name: secretory granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a secretory granule." [GOC:mah]
+synonym: "secretory vesicle membrane" BROAD []
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030668
+name: merozoite dense granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a dense granule of the type found in apicomplexan parasites." [GOC:mah, GOC:mtg_sensu]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030669
+name: clathrin-coated endocytic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-coated endocytic vesicle." [GOC:mah]
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+is_a: GO:0030666 ! endocytic vesicle membrane
+
+[Term]
+id: GO:0030670
+name: phagocytic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a phagocytic vesicle." [GOC:mah]
+synonym: "phagosome membrane" EXACT [GOC:mah]
+is_a: GO:0030666 ! endocytic vesicle membrane
+
+[Term]
+id: GO:0030671
+name: clathrin-coated phagocytic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-coated phagocytic vesicle." [GOC:mah]
+is_a: GO:0030669 ! clathrin-coated endocytic vesicle membrane
+is_a: GO:0030670 ! phagocytic vesicle membrane
+
+[Term]
+id: GO:0030672
+name: synaptic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a synaptic vesicle." [GOC:mah]
+subset: goslim_synapse
+is_a: GO:0099501 ! exocytic vesicle membrane
+
+[Term]
+id: GO:0030673
+name: axolemma
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding an axon; it is a specialized trilaminar random mosaic of protein molecules floating within a fluid matrix of highly mobile phospholipid molecules, 7-8 nm in thickness." [PMID:9527135]
+synonym: "axonal membrane" EXACT [GOC:vk]
+xref: NIF_Subcellular:sao250772229
+xref: Wikipedia:Axolemma
+is_a: GO:0032589 ! neuron projection membrane
+
+[Term]
+id: GO:0030867
+name: rough endoplasmic reticulum membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the rough endoplasmic reticulum." [GOC:mah]
+synonym: "RER membrane" EXACT [NIF_Subcellular:sao3089754107]
+synonym: "rough ER membrane" EXACT []
+xref: NIF_Subcellular:sao3089754107
+is_a: GO:0005789 ! endoplasmic reticulum membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0030868
+name: smooth endoplasmic reticulum membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the smooth endoplasmic reticulum." [GOC:mah]
+synonym: "SER membrane" EXACT []
+synonym: "smooth ER membrane" EXACT []
+xref: NIF_Subcellular:sao1596955044
+is_a: GO:0005789 ! endoplasmic reticulum membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0031088
+name: platelet dense granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the platelet dense granule." [GOC:mah]
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0031090
+name: organelle membrane
+namespace: cellular_component
+def: "A membrane that is one of the two lipid bilayers of an organelle envelope or the outermost membrane of single membrane bound organelle." [GOC:dos, GOC:mah]
+synonym: "intracellular membrane" RELATED [NIF_Subcellular:sao830981606]
+xref: NIF_Subcellular:sao830981606
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0031092
+name: platelet alpha granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the platelet alpha granule." [GOC:mah, PMID:8467233]
+synonym: "platelet alpha-granule membrane" EXACT []
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0031095
+name: platelet dense tubular network membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the platelet dense tubular network." [GOC:mah, PMID:1322202]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0031164
+name: contractile vacuolar membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the contractile vacuole." [GOC:pg]
+synonym: "contractile vacuole membrane" EXACT [GOC:mah, GOC:pf]
+is_a: GO:0005774 ! vacuolar membrane
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+
+[Term]
+id: GO:0031253
+name: cell projection membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a plasma membrane bounded cell surface projection." [GOC:krc, GOC:mah]
+synonym: "membrane extension" RELATED []
+synonym: "membrane projection" RELATED []
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0031258
+name: lamellipodium membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a lamellipodium." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031259
+name: uropod membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a uropod." [GOC:mah]
+synonym: "uropodium membrane" EXACT []
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031260
+name: pseudopodium membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a pseudopodium." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031520
+name: plasma membrane of cell tip
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding the cell tip." [GOC:mah]
+synonym: "'plasma membrane, cell tip'" EXACT []
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0031526
+name: brush border membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding the brush border." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031527
+name: filopodium membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a filopodium." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031528
+name: microvillus membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a microvillus." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0031676
+name: plasma membrane-derived thylakoid membrane
+namespace: cellular_component
+def: "The pigmented membrane of a plasma membrane-derived thylakoid." [GOC:mah, GOC:mtg_sensu]
+synonym: "plasma membrane thylakoid membrane" EXACT []
+is_a: GO:0042651 ! thylakoid membrane
+is_a: GO:0042717 ! plasma membrane-derived chromatophore membrane
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0031899
+name: chromoplast inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the chromoplast envelope; also faces the chromoplast stroma." [GOC:pz]
+is_a: GO:0009528 ! plastid inner membrane
+is_a: GO:0046862 ! chromoplast membrane
+
+[Term]
+id: GO:0031900
+name: chromoplast outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the chromoplast envelope." [GOC:pz]
+is_a: GO:0009527 ! plastid outer membrane
+is_a: GO:0046862 ! chromoplast membrane
+
+[Term]
+id: GO:0031901
+name: early endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an early endosome." [GOC:pz]
+is_a: GO:0010008 ! endosome membrane
+
+[Term]
+id: GO:0031902
+name: late endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a late endosome." [GOC:pz]
+is_a: GO:0010008 ! endosome membrane
+
+[Term]
+id: GO:0031903
+name: microbody membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a microbody." [GOC:mah]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0031965
+name: nuclear membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround the nucleus and form the nuclear envelope; excludes the intermembrane space." [GOC:mah, GOC:pz]
+xref: NIF_Subcellular:sao1687101204
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0031966
+name: mitochondrial membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround the mitochondrion and form the mitochondrial envelope." [GOC:mah, NIF_Subcellular:sao1045389829]
+xref: NIF_Subcellular:sao1045389829
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0031968
+name: organelle outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing in a cellular organelle, lipid bilayer of an organelle envelope." [GOC:mah]
+is_a: GO:0019867 ! outer membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0031969
+name: chloroplast membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround a chloroplast and form the chloroplast envelope." [GOC:mah, GOC:pz]
+xref: Wikipedia:Chloroplast_membrane
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0032127
+name: dense core granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a dense core granule." [GOC:mah]
+synonym: "dense core vesicle membrane" EXACT [GOC:kmv]
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0032154
+name: cleavage furrow
+namespace: cellular_component
+def: "The cleavage furrow is a plasma membrane invagination at the cell division site. The cleavage furrow begins as a shallow groove and eventually deepens to divide the cytoplasm." [GOC:vw, ISBN:0805319409]
+comment: While the term 'cleavage furrow' was initially associated with animal cells, such a structure occurs in many other types of cells, including unicellular protists.
+xref: Wikipedia:Cleavage_furrow
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0032578
+name: aleurone grain membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an aleurone grain." [GOC:ecd]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0032580
+name: Golgi cisterna membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the thin, flattened compartments that form the central portion of the Golgi complex." [GOC:ecd, GOC:mah]
+synonym: "Golgi apparatus cisterna membrane" EXACT []
+synonym: "Golgi stack membrane" EXACT []
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0032585
+name: multivesicular body membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a multivesicular body." [GOC:mah]
+synonym: "multivesicular endosome membrane" EXACT []
+synonym: "MVB membrane" EXACT []
+synonym: "MVE membrane" EXACT []
+is_a: GO:0031902 ! late endosome membrane
+
+[Term]
+id: GO:0032586
+name: protein storage vacuole membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a protein storage vacuole." [GOC:mah]
+is_a: GO:0009705 ! plant-type vacuole membrane
+
+[Term]
+id: GO:0032587
+name: ruffle membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a ruffle." [GOC:mah]
+synonym: "membrane ruffle" RELATED []
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0032588
+name: trans-Golgi network membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the compartments that make up the trans-Golgi network." [GOC:mah]
+synonym: "Golgi trans face membrane" RELATED []
+synonym: "trans Golgi network membrane" EXACT []
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0032589
+name: neuron projection membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a neuron projection." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0032590
+name: dendrite membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a dendrite." [GOC:mah]
+is_a: GO:0032589 ! neuron projection membrane
+
+[Term]
+id: GO:0032591
+name: dendritic spine membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a dendritic spine." [GOC:mah]
+is_a: GO:0032589 ! neuron projection membrane
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0033016
+name: rhoptry membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a rhoptry." [GOC:mah]
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0033017
+name: sarcoplasmic reticulum membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the sarcoplasmic reticulum." [GOC:rph]
+is_a: GO:0005789 ! endoplasmic reticulum membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033097
+name: amyloplast membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround an amyloplast and form the amyloplast envelope." [GOC:ecd]
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0033098
+name: amyloplast inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the amyloplast envelope; also faces the amyloplast stroma." [GOC:ecd]
+is_a: GO:0009528 ! plastid inner membrane
+is_a: GO:0033097 ! amyloplast membrane
+
+[Term]
+id: GO:0033102
+name: acidocalcisome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an acidocalcisome." [GOC:ecd, PMID:11378195]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033106
+name: cis-Golgi network membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the compartments that make up the cis-Golgi network." [GOC:mah]
+synonym: "cis Golgi network membrane" EXACT []
+synonym: "Golgi cis face membrane" RELATED []
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033110
+name: Cvt vesicle membrane
+namespace: cellular_component
+def: "Either of the two lipid bilayers surrounding a Cvt vesicle, a vesicle that functions in the cytoplasm-to-vacuole targeting (Cvt) pathway." [GOC:ecd, PMID:20065092]
+synonym: "cytoplasm to vacuole targeting vesicle membrane" EXACT []
+synonym: "cytoplasm-to-vacuole targeting vesicle membrane" EXACT []
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+
+[Term]
+id: GO:0033111
+name: attachment organelle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an attachment organelle. This is a region of the cell membrane facing the environment - in mycoplasma, part of the mycolate outer membrane." [GOC:ecd]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033113
+name: cyanelle membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround a cyanelle and form the cyanelle envelope." [GOC:ecd]
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0033115
+name: cyanelle thylakoid membrane
+namespace: cellular_component
+def: "The lipid bilayer membrane of any thylakoid within a cyanelle." [GOC:mah]
+is_a: GO:0055035 ! plastid thylakoid membrane
+
+[Term]
+id: GO:0033116
+name: endoplasmic reticulum-Golgi intermediate compartment membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the compartments of the endoplasmic reticulum (ER)-Golgi intermediate compartment system." [GOC:mah, GOC:pr, PMID:16723730]
+synonym: "ER-Golgi intermediate compartment membrane" EXACT []
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033118
+name: esterosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an esterosome. This membrane has characteristics of rough endoplasmic reticulum (RER) membranes." [GOC:ecd, PMID:2307702]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033162
+name: melanosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a melanosome." [GOC:mah]
+is_a: GO:0090741 ! pigment granule membrane
+
+[Term]
+id: GO:0033163
+name: microneme membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a microneme." [GOC:mah]
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0033583
+name: rhabdomere membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding the rhabdomere." [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0034045
+name: phagophore assembly site membrane
+namespace: cellular_component
+def: "A cellular membrane associated with the phagophore assembly site." [GOC:mah, GOC:rph, PMID:16874040, PMID:17382324]
+synonym: "isolation membrane" RELATED []
+synonym: "PAS membrane" EXACT []
+synonym: "phagophore" RELATED [PMID:20811355]
+synonym: "pre-autophagosomal structure membrane" NARROW []
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0034357
+name: photosynthetic membrane
+namespace: cellular_component
+def: "A membrane enriched in complexes formed of reaction centers, accessory pigments and electron carriers, in which photosynthetic reactions take place." [GOC:ds, GOC:mah]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0034426
+name: etioplast membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround a etioplast and form the etioplast envelope." [GOC:rph]
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0035577
+name: azurophil granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an azurophil granule, a primary lysosomal granule found in neutrophil granulocytes that contains a wide range of hydrolytic enzymes and is released into the extracellular fluid." [GOC:bf, PMID:17152095]
+synonym: "primary granule membrane" EXACT []
+is_a: GO:0005765 ! lysosomal membrane
+is_a: GO:0030667 ! secretory granule membrane
+created_by: bf
+creation_date: 2010-10-05T01:29:10Z
+
+[Term]
+id: GO:0035579
+name: specific granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a specific granule, a granule with a membranous, tubular internal structure, found primarily in mature neutrophil cells. Most are released into the extracellular fluid. Specific granules contain lactoferrin, lysozyme, vitamin B12 binding protein and elastase." [GOC:bf, PMID:7334549]
+synonym: "secondary granule membrane" EXACT []
+is_a: GO:0030667 ! secretory granule membrane
+created_by: bf
+creation_date: 2010-10-05T01:32:47Z
+
+[Term]
+id: GO:0035997
+name: rhabdomere microvillus membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a microvillus of a rhabdomere." [GOC:bf, GOC:sart, PMID:14744998]
+is_a: GO:0031528 ! microvillus membrane
+created_by: bf
+creation_date: 2011-09-01T02:24:20Z
+
+[Term]
+id: GO:0036012
+name: cyanelle inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, lipid bilayer of the cyanelle envelope; also faces the cyanelle stroma." [GOC:aa, PMID:18976493]
+synonym: "cyanelle inner envelope membrane" EXACT [PMID:18976493]
+is_a: GO:0009528 ! plastid inner membrane
+is_a: GO:0033113 ! cyanelle membrane
+created_by: bf
+creation_date: 2011-10-10T01:48:56Z
+
+[Term]
+id: GO:0036013
+name: cyanelle outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, lipid bilayer of the cyanelle envelope." [GOC:aa]
+is_a: GO:0009527 ! plastid outer membrane
+is_a: GO:0033113 ! cyanelle membrane
+created_by: bf
+creation_date: 2011-10-10T01:50:56Z
+
+[Term]
+id: GO:0036020
+name: endolysosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an endolysosome. An endolysosome is a transient hybrid organelle formed by fusion of a late endosome with a lysosome." [GOC:pde]
+synonym: "endolysosomal membrane" EXACT [GOC:bf]
+is_a: GO:0005765 ! lysosomal membrane
+is_a: GO:0010008 ! endosome membrane
+created_by: bf
+creation_date: 2011-10-13T04:32:00Z
+
+[Term]
+id: GO:0036062
+name: presynaptic periactive zone
+namespace: cellular_component
+def: "A region that surrounds the active zone of the presynaptic plasma membrane, and is specialized for the control of synaptic development." [GOC:sart, PMID:10976048, PMID:18439406]
+synonym: "periactive zone" EXACT [PMID:10976048, PMID:18439406]
+synonym: "pre-synaptic periactive zone" EXACT []
+is_a: GO:0097060 ! synaptic membrane
+created_by: bf
+creation_date: 2011-12-14T02:25:29Z
+
+[Term]
+id: GO:0036186
+name: early phagosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an early phagosome." [GOC:phg]
+synonym: "early phagocytic vesicle membrane" EXACT [GOC:bf]
+is_a: GO:0030670 ! phagocytic vesicle membrane
+created_by: bf
+creation_date: 2012-04-16T02:37:30Z
+
+[Term]
+id: GO:0036195
+name: muscle cell projection membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a muscle cell projection." [CL:0000187, GOC:kmv, PMID:15930100, PMID:22464329]
+is_a: GO:0031253 ! cell projection membrane
+created_by: bf
+creation_date: 2012-04-20T10:21:51Z
+
+[Term]
+id: GO:0036362
+name: ascus membrane
+namespace: cellular_component
+def: "A double layer of lipid molecules that surrounds an ascus, a capsule containing the sexual spores in some fungi." [GOC:mcc, GOC:vw, PMID:21900489]
+is_a: GO:0016020 ! membrane
+created_by: bf
+creation_date: 2012-09-21T11:21:41Z
+
+[Term]
+id: GO:0036407
+name: mycolate outer membrane
+namespace: cellular_component
+def: "A mycolic acid-rich cell outer membrane containing a lipid bilayer and long-chain mycolic acids (hydroxylated branched-chain fatty acids) that are covalently linked to the cell wall peptidoglycan via an arabinogalactan network. Found in mycobacteria and related genera (e.g. corynebacteria)." [GOC:bf, GOC:das, GOC:md, PMID:18316738, PMID:18567661]
+synonym: "MOM" EXACT [GOC:md]
+synonym: "mycobacterial outer membrane" EXACT [GOC:md]
+synonym: "mycomembrane" EXACT [GOC:das, GOC:md]
+is_a: GO:0009279 ! cell outer membrane
+created_by: bf
+creation_date: 2013-08-15T13:33:46Z
+
+[Term]
+id: GO:0042170
+name: plastid membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround a plastid and form the plastid envelope." [GOC:mah]
+is_a: GO:0031090 ! organelle membrane
+
+[Term]
+id: GO:0042175
+name: nuclear outer membrane-endoplasmic reticulum membrane network
+namespace: cellular_component
+def: "The continuous network of membranes encompassing the nuclear outer membrane and the endoplasmic reticulum membrane." [GOC:bf, GOC:jl, GOC:mah, GOC:mcc, GOC:pr, GOC:vw]
+synonym: "NE-ER continuum" RELATED []
+synonym: "NE-ER network" RELATED []
+synonym: "nuclear envelope-endoplasmic reticulum continuum" RELATED []
+synonym: "nuclear envelope-endoplasmic reticulum network" RELATED [GOC:mah]
+synonym: "nuclear envelope-ER network" RELATED []
+synonym: "nuclear membrane-endoplasmic reticulum continuum" EXACT [GOC:mah]
+synonym: "nuclear membrane-ER network" EXACT [GOC:mah]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0042383
+name: sarcolemma
+namespace: cellular_component
+def: "The outer membrane of a muscle cell, consisting of the plasma membrane, a covering basement membrane (about 100 nm thick and sometimes common to more than one fiber), and the associated loose network of collagen fibers." [ISBN:0198506732]
+xref: Wikipedia:Sarcolemma
+is_a: GO:0005886 ! plasma membrane
+
+[Term]
+id: GO:0042584
+name: chromaffin granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a chromaffin granule, a specialized secretory vesicle found in the cells of adrenal glands and various other organs, which is concerned with the synthesis, storage, metabolism, and secretion of epinephrine and norepinephrine." [GOC:jl]
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0042589
+name: zymogen granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a zymogen granule." [GOC:jl]
+is_a: GO:0030667 ! secretory granule membrane
+
+[Term]
+id: GO:0042622
+name: photoreceptor outer segment membrane
+namespace: cellular_component
+def: "The membrane surrounding the outer segment of a vertebrate photoreceptor." [GOC:jl]
+is_a: GO:0060170 ! ciliary membrane
+
+[Term]
+id: GO:0042650
+name: prothylakoid membrane
+namespace: cellular_component
+def: "The membrane of prothylakoids, underdeveloped thylakoids found in etioplasts, lacking competent photosynthetic membranes." [GOC:jl, PMID:11532175]
+is_a: GO:0055035 ! plastid thylakoid membrane
+
+[Term]
+id: GO:0042651
+name: thylakoid membrane
+namespace: cellular_component
+def: "The pigmented membrane of any thylakoid." [GOC:jl, GOC:pr]
+is_a: GO:0034357 ! photosynthetic membrane
+
+[Term]
+id: GO:0042717
+name: plasma membrane-derived chromatophore membrane
+namespace: cellular_component
+def: "The lipid bilayer associated with a plasma membrane-derived chromatophore; surrounds chromatophores that form complete vesicles." [GOC:jl, GOC:mah, ISBN:0395825172, PMID:11867431]
+is_a: GO:0034357 ! photosynthetic membrane
+
+[Term]
+id: GO:0042734
+name: presynaptic membrane
+namespace: cellular_component
+def: "A specialized area of membrane of the axon terminal that faces the plasma membrane of the neuron or muscle fiber with which the axon terminal establishes a synaptic junction; many synaptic junctions exhibit structural presynaptic characteristics, such as conical, electron-dense internal protrusions, that distinguish it from the remainder of the axon plasma membrane." [GOC:jl, ISBN:0815316194]
+subset: goslim_synapse
+synonym: "pre-synaptic membrane" EXACT []
+synonym: "presynaptic plasma membrane" EXACT []
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0043594
+name: outer endospore membrane
+namespace: cellular_component
+def: "The outer membrane around a bacterial endospore, located between the endospore cortex and endospore coat." [GOC:mlg]
+is_a: GO:0019867 ! outer membrane
+
+[Term]
+id: GO:0043661
+name: peribacteroid membrane
+namespace: cellular_component
+def: "A membrane that surrounds one or more bacteroids (such as nitrogen-fixing bacteroids within legume root nodule cells)." [GOC:cc]
+is_a: GO:0030666 ! endocytic vesicle membrane
+
+[Term]
+id: GO:0044841
+name: gut granule membrane
+namespace: cellular_component
+def: "The membrane of a gut granule, a lysosome-related organelle contained within the intestinal cells of the nematode C. elegans." [GOC:kmv, PMID:22916203, PMID:24204312]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+created_by: jl
+creation_date: 2014-03-25T12:02:05Z
+
+[Term]
+id: GO:0044853
+name: plasma membrane raft
+namespace: cellular_component
+def: "A membrane raft that is part of the plasma membrane." [GOC:jl]
+is_a: GO:0045121 ! membrane raft
+is_a: GO:0098590 ! plasma membrane region
+created_by: jl
+creation_date: 2014-07-23T15:55:23Z
+
+[Term]
+id: GO:0045121
+name: membrane raft
+namespace: cellular_component
+def: "Any of the small (10-200 nm), heterogeneous, highly dynamic, sterol- and sphingolipid-enriched membrane domains that compartmentalize cellular processes. Small rafts can sometimes be stabilized to form larger platforms through protein-protein and protein-lipid interactions." [PMID:16645198, PMID:20044567]
+synonym: "GEM domain" RELATED []
+synonym: "glycolipid-enriched membrane domain" RELATED []
+synonym: "lipid raft" EXACT []
+xref: Wikipedia:Lipid_raft
+is_a: GO:0098857 ! membrane microdomain
+
+[Term]
+id: GO:0045211
+name: postsynaptic membrane
+namespace: cellular_component
+def: "A specialized area of membrane facing the presynaptic membrane on the tip of the nerve ending and separated from it by a minute cleft (the synaptic cleft). Neurotransmitters cross the synaptic cleft and transmit the signal to the postsynaptic membrane." [ISBN:0198506732]
+subset: goslim_synapse
+synonym: "post-synaptic membrane" EXACT []
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0046859
+name: hydrogenosomal membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a hydrogenosome." [GOC:ai]
+synonym: "hydrogenosome membrane" EXACT []
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0046860
+name: glycosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a glycosome." [GOC:ai]
+is_a: GO:0005778 ! peroxisomal membrane
+
+[Term]
+id: GO:0046861
+name: glyoxysomal membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a glyoxysome." [GOC:ai]
+synonym: "glyoxysome membrane" EXACT []
+is_a: GO:0005778 ! peroxisomal membrane
+
+[Term]
+id: GO:0046862
+name: chromoplast membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround a chromoplast and form the chromoplast envelope." [GOC:ai, GOC:mah]
+is_a: GO:0042170 ! plastid membrane
+
+[Term]
+id: GO:0048475
+name: coated membrane
+namespace: cellular_component
+def: "A single or double lipid bilayer with any of several different proteinaceous coats that can associate with membranes. Membrane coats include those formed by clathrin plus an adaptor complex, the COPI and COPII complexes." [GOC:jid]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0048787
+name: presynaptic active zone membrane
+namespace: cellular_component
+def: "The membrane portion of the presynaptic active zone; it is the site where docking and fusion of synaptic vesicles occurs for the release of neurotransmitters." [PMID:12812759, PMID:12923177, PMID:3152289]
+subset: goslim_synapse
+synonym: "active zone plasma membrane" EXACT [NIF_Subcellular:sao2038461087]
+synonym: "active zone pre-synaptic plasma membrane" EXACT []
+synonym: "active zone presynaptic plasma membrane" EXACT []
+synonym: "pre-synaptic active zone membrane" EXACT []
+xref: NIF_Subcellular:sao2038461087
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0055035
+name: plastid thylakoid membrane
+namespace: cellular_component
+def: "The lipid bilayer membrane of any thylakoid within a plastid." [GOC:jid, GOC:rph]
+is_a: GO:0042170 ! plastid membrane
+is_a: GO:0042651 ! thylakoid membrane
+
+[Term]
+id: GO:0055038
+name: recycling endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a recycling endosome." [GOC:jid, GOC:rph, PMID:10930469, PMID:15601896, PMID:16246101]
+is_a: GO:0010008 ! endosome membrane
+
+[Term]
+id: GO:0060170
+name: ciliary membrane
+namespace: cellular_component
+alt_id: GO:0020017
+def: "The portion of the plasma membrane surrounding a cilium." [GOC:cilia, GOC:dph, GOC:rph]
+comment: Note that cilia and eukaryotic flagella are deemed to be equivalent.
+synonym: "cilial membrane" EXACT []
+synonym: "cilium membrane" EXACT []
+synonym: "flagellar membrane" NARROW []
+synonym: "flagellum membrane" NARROW []
+is_a: GO:0031253 ! cell projection membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0060171
+name: stereocilium membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a stereocilium." [GOC:dph, GOC:rph]
+is_a: GO:0032589 ! neuron projection membrane
+
+[Term]
+id: GO:0060201
+name: clathrin-sculpted acetylcholine transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-sculpted acetylcholine transport vesicle." [GOC:dph]
+synonym: "clathrin sculpted acetylcholine constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "clathrin sculpted acetylcholine transport vesicle membrane" EXACT [GOC:sl]
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+
+[Term]
+id: GO:0060203
+name: clathrin-sculpted glutamate transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-sculpted glutamate transport vesicle." [GOC:dph]
+synonym: "clathrin sculpted glutamate constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "clathrin sculpted glutamate transport vesicle membrane" EXACT [GOC:sl]
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+
+[Term]
+id: GO:0060342
+name: photoreceptor inner segment membrane
+namespace: cellular_component
+def: "The membrane surrounding the inner segment of a vertebrate photoreceptor. The photoreceptor inner segment contains mitochondria, ribosomes and membranes where opsin molecules are assembled and passed to be part of the outer segment discs." [GOC:dph]
+is_a: GO:0098590 ! plasma membrane region
+
+[Term]
+id: GO:0061202
+name: clathrin-sculpted gamma-aminobutyric acid transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-sculpted gamma-aminobutyric acid transport vesicle." [GOC:dph]
+synonym: "clathrin sculpted GABA transport vesicle membrane" EXACT [GOC:dph]
+synonym: "clathrin sculpted gamma-aminobutyric acid transport vesicle membrane" EXACT [GOC:sl]
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+created_by: dph
+creation_date: 2010-07-29T10:54:33Z
+
+[Term]
+id: GO:0061474
+name: phagolysosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a phagolysosome." [GOC:dph, PMID:22073313]
+is_a: GO:0005765 ! lysosomal membrane
+is_a: GO:0030670 ! phagocytic vesicle membrane
+created_by: dph
+creation_date: 2012-11-06T12:26:18Z
+
+[Term]
+id: GO:0070056
+name: prospore membrane leading edge
+namespace: cellular_component
+def: "The region of the prospore membrane that extends to surround the spore nucleus; coated with specific proteins that are thought to play a role in prospore membrane organization." [GOC:mah, PMID:14702385]
+synonym: "forespore membrane leading edge" EXACT []
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0070083
+name: clathrin-sculpted monoamine transport vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a clathrin-sculpted monoamine transport vesicle." [GOC:mg2]
+synonym: "clathrin sculpted monoamine constitutive secretory pathway transport vesicle membrane" EXACT []
+synonym: "clathrin sculpted monoamine transport vesicle membrane" EXACT [GOC:sl]
+is_a: GO:0030658 ! transport vesicle membrane
+is_a: GO:0030665 ! clathrin-coated vesicle membrane
+
+[Term]
+id: GO:0070112
+name: organellar chromatophore membrane
+namespace: cellular_component
+def: "Either of the lipid bilayers that surround an organellar chromatophore." [GOC:mah]
+synonym: "Paulinella-type chromatophore membrane" EXACT [GOC:mah]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+
+[Term]
+id: GO:0070113
+name: organellar chromatophore inner membrane
+namespace: cellular_component
+def: "The inner, i.e. lumen-facing, of the two lipid bilayers surrounding an organellar chromatophore." [GOC:mah]
+synonym: "Paulinella-type chromatophore inner membrane" EXACT [GOC:mah]
+is_a: GO:0070112 ! organellar chromatophore membrane
+
+[Term]
+id: GO:0070114
+name: organellar chromatophore outer membrane
+namespace: cellular_component
+def: "The outer, i.e. cytoplasm-facing, of the two lipid bilayers surrounding an organellar chromatophore." [GOC:mah]
+synonym: "Paulinella-type chromatophore outer membrane" EXACT [GOC:mah]
+is_a: GO:0043661 ! peribacteroid membrane
+is_a: GO:0070112 ! organellar chromatophore membrane
+
+[Term]
+id: GO:0070118
+name: organellar chromatophore thylakoid membrane
+namespace: cellular_component
+def: "The lipid bilayer membrane of any thylakoid within an organellar chromatophore." [GOC:mah]
+synonym: "Paulinella-type chromatophore thylakoid membrane" EXACT [GOC:mah]
+is_a: GO:0042651 ! thylakoid membrane
+is_a: GO:0070112 ! organellar chromatophore membrane
+
+[Term]
+id: GO:0070250
+name: mating projection membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a mating projection, the projection formed by unicellular fungi in response to mating pheromone." [GOC:jp]
+synonym: "shmoo membrane" NARROW [GOC:jp]
+is_a: GO:0031253 ! cell projection membrane
+
+[Term]
+id: GO:0070686
+name: macropinocytic cup membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a macropinocytic cup." [GOC:mah]
+synonym: "crown membrane" EXACT [GOC:mah]
+is_a: GO:0031253 ! cell projection membrane
+created_by: mah
+creation_date: 2009-06-03T10:52:25Z
+
+[Term]
+id: GO:0070821
+name: tertiary granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a tertiary granule." [GOC:BHF, GOC:mah, GOC:rl, PMID:12070036]
+is_a: GO:0030667 ! secretory granule membrane
+created_by: mah
+creation_date: 2009-07-20T03:59:41Z
+
+[Term]
+id: GO:0070867
+name: mating projection tip membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a mating projection tip." [GOC:mah]
+synonym: "mating projection membrane fusion domain" EXACT [PMID:29134248]
+synonym: "shmoo tip membrane" NARROW [GOC:mah]
+is_a: GO:0031520 ! plasma membrane of cell tip
+created_by: mah
+creation_date: 2009-08-19T04:05:58Z
+
+[Term]
+id: GO:0090512
+name: eisosome membrane domain/MCC
+namespace: cellular_component
+def: "A plasma membrane part that is composed of a furrow-like plasma membrane domain and associated integral transmembrane proteins." [GOC:al, GOC:vw, PMID:22368779]
+is_a: GO:0044853 ! plasma membrane raft
+created_by: tb
+creation_date: 2012-12-07T17:00:19Z
+
+[Term]
+id: GO:0090741
+name: pigment granule membrane
+namespace: cellular_component
+def: "Any membrane that is part of a pigment granule." [PMID:11294610]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+created_by: tb
+creation_date: 2017-05-16T22:33:39Z
+
+[Term]
+id: GO:0097060
+name: synaptic membrane
+namespace: cellular_component
+def: "A specialized area of membrane on either the presynaptic or the postsynaptic side of a synapse, the junction between a nerve fiber of one neuron and another neuron or muscle fiber or glial cell." [GOC:BHF, PMID:20410104]
+subset: goslim_synapse
+is_a: GO:0098590 ! plasma membrane region
+created_by: pr
+creation_date: 2011-06-07T11:22:09Z
+
+[Term]
+id: GO:0097232
+name: lamellar body membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a lamellar body. A lamellar body is a membrane-bounded organelle, specialized for the storage and secretion of various substances (surfactant phospholipids, glycoproteins and acid phosphates) which are arranged in the form of tightly packed, concentric, membrane sheets or lamellae. Has some similar properties to, but is distinct from, a lysosome." [GOC:sl, PMID:11940594]
+is_a: GO:0030667 ! secretory granule membrane
+created_by: pr
+creation_date: 2012-01-26T10:28:42Z
+
+[Term]
+id: GO:0097233
+name: alveolar lamellar body membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an alveolar lamellar body, a specialized secretory organelle found in type II pneumocytes and involved in the synthesis, secretion, and reutilization of pulmonary surfactant." [GOC:sl, PMID:11940594]
+is_a: GO:0097232 ! lamellar body membrane
+created_by: pr
+creation_date: 2012-01-26T10:30:24Z
+
+[Term]
+id: GO:0097234
+name: epidermal lamellar body membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an epidermal lamellar body, a specialized secretory organelle found in keratinocytes and involved in the formation of an impermeable, lipid-containing membrane that serves as a water barrier and is required for correct skin barrier function." [GOC:sl, PMID:11940594]
+is_a: GO:0097232 ! lamellar body membrane
+created_by: pr
+creation_date: 2012-01-26T10:32:13Z
+
+[Term]
+id: GO:0097381
+name: photoreceptor disc membrane
+namespace: cellular_component
+def: "Stack of disc membranes located inside a photoreceptor outer segment, and containing densely packed molecules of photoreceptor proteins that traverse the lipid bilayer. Disc membranes arise as evaginations of the ciliary membrane during the development of the outer segment and may or may not remain contiguous with the ciliary membrane." [GOC:bj, GOC:krc, GOC:pde, PMID:11826267, PMID:19501669, PMID:2537204, PMID:26574505, PMID:6771304, PMID:7507907]
+is_a: GO:0031090 ! organelle membrane
+created_by: pr
+creation_date: 2012-10-05T11:01:22Z
+
+[Term]
+id: GO:0097488
+name: multivesicular body, internal vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a multivesicular body internal vesicle." [GOC:pde, PMID:21183070]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0098588 ! bounding membrane of organelle
+created_by: pr
+creation_date: 2013-07-08T20:36:33Z
+
+[Term]
+id: GO:0097524
+name: sperm plasma membrane
+namespace: cellular_component
+def: "A plasma membrane that is part of a sperm cell." [GOC:cjm]
+is_a: GO:0005886 ! plasma membrane
+created_by: pr
+creation_date: 2013-10-18T11:31:17Z
+
+[Term]
+id: GO:0098588
+name: bounding membrane of organelle
+namespace: cellular_component
+def: "The lipid bilayer that forms the outer-most layer of an organelle." [GOC:dos]
+comment: Examples include the outer membranes of double membrane bound organelles such as mitochondria as well as the bounding membranes of single-membrane bound organelles such as lysosomes.
+is_a: GO:0031090 ! organelle membrane
+created_by: dos
+creation_date: 2014-02-26T13:41:31Z
+
+[Term]
+id: GO:0098590
+name: plasma membrane region
+namespace: cellular_component
+def: "A membrane that is a (regional) part of the plasma membrane." [GOC:dos]
+comment: Note that this term should not be used for direct manual annotation as it should always be possible to choose a more specific subclass.
+subset: gocheck_do_not_annotate
+synonym: "region of plasma membrane" EXACT []
+is_a: GO:0016020 ! membrane
+created_by: dos
+creation_date: 2014-03-06T11:55:32Z
+
+[Term]
+id: GO:0098804
+name: non-motile cilium membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding a non-motile cilium." [GOC:cilia, GOC:dos]
+synonym: "nonmotile primary cilium membrane" RELATED []
+is_a: GO:0060170 ! ciliary membrane
+
+[Term]
+id: GO:0098826
+name: endoplasmic reticulum tubular network membrane
+namespace: cellular_component
+def: "The membrane of the endoplasmic reticulum tubular network." [PMID:16469703]
+is_a: GO:0005789 ! endoplasmic reticulum membrane
+
+[Term]
+id: GO:0098835
+name: presynaptic endocytic zone membrane
+namespace: cellular_component
+def: "The region of the presynaptic membrane that is part of the presynaptic endocytic zone - where synaptic vesicles are endocytosed and recycled following release." [GOC:dos]
+subset: goslim_synapse
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0098839
+name: postsynaptic density membrane
+namespace: cellular_component
+def: "The membrane component of the postsynaptic density. This is the region of the postsynaptic membrane in which the population of neurotransmitter receptors involved in synaptic transmission are concentrated." [GOC:dos]
+subset: goslim_synapse
+is_a: GO:0099634 ! postsynaptic specialization membrane
+
+[Term]
+id: GO:0098844
+name: postsynaptic endocytic zone membrane
+namespace: cellular_component
+def: "The region of the postsynaptic membrane that is part of the postsynaptic endocytic zone. This region of membrane is associated with stable clathrin puncta." [PMID:17880892]
+subset: goslim_synapse
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0098852
+name: lytic vacuole membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a lytic vacuole and separating its contents from the cytoplasm of the cell." [GOC:dos]
+is_a: GO:0005774 ! vacuolar membrane
+
+[Term]
+id: GO:0098857
+name: membrane microdomain
+namespace: cellular_component
+def: "A membrane region with a lipid composition that is distinct from that of the membrane regions that surround it." [PMID:20044567, PMID:26253820]
+is_a: GO:0016020 ! membrane
+
+[Term]
+id: GO:0098895
+name: postsynaptic endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a postsynaptic endosome." [GOC:pz]
+subset: goslim_synapse
+is_a: GO:0010008 ! endosome membrane
+
+[Term]
+id: GO:0098896
+name: postsynaptic early endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a postsynaptic early endosome." [GOC:pz]
+subset: goslim_synapse
+is_a: GO:0031901 ! early endosome membrane
+is_a: GO:0098895 ! postsynaptic endosome membrane
+
+[Term]
+id: GO:0098897
+name: spine apparatus membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the spine apparatus." [GOC:mah]
+subset: goslim_synapse
+is_a: GO:0098588 ! bounding membrane of organelle
+
+[Term]
+id: GO:0098944
+name: postsynaptic recycling endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a postsynaptic recycling endosome." [GOC:pz]
+subset: goslim_synapse
+is_a: GO:0098895 ! postsynaptic endosome membrane
+
+[Term]
+id: GO:0098954
+name: presynaptic endosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a presynaptic endosome." [GOC:pz]
+subset: goslim_synapse
+is_a: GO:0010008 ! endosome membrane
+
+[Term]
+id: GO:0099012
+name: neuronal dense core vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a neuronal dense core vesicle." [GOC:dos]
+subset: goslim_synapse
+is_a: GO:0032127 ! dense core granule membrane
+
+[Term]
+id: GO:0099164
+name: postsynaptic specialization membrane of symmetric synapse
+namespace: cellular_component
+def: "The membrane component of the postsynaptic specialization of a symmetric synapse. This is the region of the postsynaptic membrane in which the population of neurotransmitter receptors involved in synaptic transmission are concentrated." [GOC:dos]
+subset: goslim_synapse
+is_a: GO:0099634 ! postsynaptic specialization membrane
+created_by: dos
+creation_date: 2017-09-10T11:50:44Z
+
+[Term]
+id: GO:0099400
+name: caveola neck
+namespace: cellular_component
+def: "A membrane microdomain that forms a necklace around the bulb (crater) of a caveola. Intramembrane particles are concentrated in this region and cytoskeletal components, including actin, are highly enriched in the area underlying it." [GOC:pad, GOC:PARL, PMID:17227843]
+is_a: GO:0098590 ! plasma membrane region
+is_a: GO:0098857 ! membrane microdomain
+
+[Term]
+id: GO:0099401
+name: caveola bulb
+namespace: cellular_component
+def: "The region of a caveola that extends into the cytoplasm, excluding the neck (rim). This region is associated with intracellular caveola proteins." [GOC:PARL, GOC:POD, PMID:17227843]
+synonym: "caveola crater" EXACT []
+is_a: GO:0098857 ! membrane microdomain
+
+[Term]
+id: GO:0099501
+name: exocytic vesicle membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding an exocytic vesicle." [GOC:dos]
+synonym: "secretory vesicle membrane" BROAD []
+is_a: GO:0030658 ! transport vesicle membrane
+
+[Term]
+id: GO:0099634
+name: postsynaptic specialization membrane
+namespace: cellular_component
+def: "The membrane component of the postsynaptic specialization. This is the region of the postsynaptic membrane in which the population of neurotransmitter receptors involved in synaptic transmission are concentrated." [GOC:dos]
+subset: goslim_synapse
+is_a: GO:0097060 ! synaptic membrane
+
+[Term]
+id: GO:0101003
+name: ficolin-1-rich granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a ficolin-1-rich granule." [GOC:mec, PMID:23650620]
+is_a: GO:0030667 ! secretory granule membrane
+created_by: mec
+
+[Term]
+id: GO:0101004
+name: cytolytic granule membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding the cytolytic granule." [PMID:17272266, PMID:21247065]
+is_a: GO:0005765 ! lysosomal membrane
+created_by: mec
+creation_date: 2015-12-15T04:32:00Z
+
+[Term]
+id: GO:0106175
+name: phagolysosome vesicle membrane
+namespace: cellular_component
+def: "The lipid bylayer surrounding a phagolysosome." [GOC:pde, PMID:29471269]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+created_by: hjd
+creation_date: 2019-02-11T19:12:53Z
+
+[Term]
+id: GO:0110070
+name: cellularization cleavage furrow
+namespace: cellular_component
+def: "A plasma membrane invagination at the site of separation of a multi-nucleate cell or syncytium into individual cells." [GOC:ha, PMID:27226317]
+is_a: GO:0098590 ! plasma membrane region
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/14543" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/21737" xsd:anyURI
+created_by: kmv
+creation_date: 2017-11-22T20:10:14Z
+
+[Term]
+id: GO:0110146
+name: magnetosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a magnetosome." [GOC:aa, PMID:27620945]
+is_a: GO:0031090 ! organelle membrane
+created_by: kmv
+creation_date: 2019-05-30T17:51:09Z
+
+[Term]
+id: GO:0120001
+name: apical plasma membrane urothelial plaque
+namespace: cellular_component
+def: "A scallop-shaped plaque, also referred to as an asymmetric unit membrane (AUM), found in the apical plasma membrane of urothelial superficial (umbrella) cells which form a a barrier to the passage of water and soluble toxic compounds found in urine. The plaques are thickened regions of membrane composed of uroplakin transmembrane proteins which form a crystalline array." [GOC:krc, PMID:21468280, PMID:21887288]
+synonym: "asymmetric unit membrane" EXACT []
+synonym: "AUM" RELATED []
+is_a: GO:0005886 ! plasma membrane
+is_a: GO:0098590 ! plasma membrane region
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/12996" xsd:anyURI
+created_by: krc
+creation_date: 2017-02-23T21:10:27Z
+
+[Term]
+id: GO:0120003
+name: hinge region between urothelial plaques of apical plasma membrane
+namespace: cellular_component
+def: "A narrow rim of non-thickened membrane in between urothelial plaques in apical plasma membrane." [GOC:krc, PMID:21468280, PMID:21887288]
+is_a: GO:0098590 ! plasma membrane region
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/12996" xsd:anyURI
+created_by: krc
+creation_date: 2017-02-23T22:13:27Z
+
+[Term]
+id: GO:0120201
+name: cone photoreceptor disc membrane
+namespace: cellular_component
+def: "Stack of disc membranes located inside a cone photoreceptor outer segment, and containing densely packed molecules of opsin photoreceptor proteins that traverse the lipid bilayer. Cone disc membranes arise as evaginations of the ciliary membrane during the development of the cone outer segment and remain contiguous with the ciliary membrane." [GOC:krc, GOC:pde, PMID:19501669, PMID:26574505, PMID:6771304]
+is_a: GO:0060170 ! ciliary membrane
+is_a: GO:0097381 ! photoreceptor disc membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17217" xsd:anyURI
+created_by: krc
+creation_date: 2019-05-07T23:17:43Z
+
+[Term]
+id: GO:0120202
+name: rod photoreceptor disc membrane
+namespace: cellular_component
+def: "Stack of disc membranes located inside a rod photoreceptor outer segment, and containing densely packed molecules of rhodopsin photoreceptor proteins that traverse the lipid bilayer. It is thought that rod disc membranes arise as evaginations of the ciliary membrane near the base of the outer segment, which then become completely separated from the ciliary membrane, during the development of the rod outer segment." [GOC:krc, GOC:pde, PMID:19501669, PMID:26574505, PMID:6771304]
+is_a: GO:0030659 ! cytoplasmic vesicle membrane
+is_a: GO:0097381 ! photoreceptor disc membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17217" xsd:anyURI
+created_by: krc
+creation_date: 2019-05-07T23:27:06Z
+
+[Term]
+id: GO:0120267
+name: pellicular membrane
+namespace: cellular_component
+def: "The portion of the plasma membrane surrounding the pellicle, a structure enclosing some parasite cells such as certain apicomplexa and Euglenozoa. These membranes are associated with an infrastructure of microtubules, microfilaments, and other organelles." [GOC:ach, GOC:krc, PMID:18095354, PMID:30550896, PMID:6993644, PMID:7175771]
+comment: This sub-domain of the plasma membrane excludes the ciliary and ciliary pocket membranes.
+synonym: "pellicle membrane" EXACT []
+synonym: "pellicular plasma membrane" EXACT []
+is_a: GO:0098590 ! plasma membrane region
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20034" xsd:anyURI
+created_by: krc
+creation_date: 2020-09-29T21:08:28Z
+
+[Term]
+id: GO:0120281
+name: autolysosome membrane
+namespace: cellular_component
+def: "A lipid bilayer that surrounds an autolysosome, a single-membrane-bounded vesicle in which endogenous cellular material is degraded." [GOC:krc, GOC:nhn, PMID:17182262, PMID:24657946, PMID:26382870, PMID:32047650]
+is_a: GO:0005765 ! lysosomal membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20239" xsd:anyURI
+created_by: krc
+creation_date: 2020-11-17T02:46:19Z
+
+[Term]
+id: GO:0140221
+name: pathogen-containing vacuole membrane
+namespace: cellular_component
+def: "Host-derived membrane of a pathogen-containing vacuole." [PMID:10560000, PMID:26842840]
+synonym: "pathogen inclusion membrane" RELATED []
+synonym: "pathogen-containing compartment membrane" EXACT []
+is_a: GO:0016020 ! membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/15580" xsd:anyURI
+created_by: pg
+creation_date: 2018-04-20T06:18:25Z
+
+[Term]
+id: GO:0140549
+name: spore inner membrane
+namespace: cellular_component
+def: "The membrane surrounding the spore core (endospore core) that separates it from its external environment." [PMID:23202530]
+synonym: "spore membrane" BROAD []
+is_a: GO:0016020 ! membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20359" xsd:anyURI
+created_by: pg
+creation_date: 2020-11-12T10:00:15Z
+
+[Term]
+id: GO:0160056
+name: macropinosome membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding a macropinosome." [PMID:19690049]
+is_a: GO:0010008 ! endosome membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25127" xsd:anyURI
+created_by: rynl
+creation_date: 2023-03-20T18:22:57Z
+
+[Term]
+id: GO:0160211
+name: apicoplast membrane
+namespace: cellular_component
+def: "Any of the lipid bilayers that surround an apicoplast and form the apicoplast envelope." [PMID:20124342, PMID:38865262]
+is_a: GO:0042170 ! plastid membrane
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/28872" xsd:anyURI
+created_by: rynl
+creation_date: 2024-09-07T00:44:46Z
+
+[Term]
+id: GO:1902929
+name: plasma membrane of growing cell tip
+namespace: cellular_component
+def: "Any plasma membrane part that is part of a growing cell tip." [GO_REF:0000064, GOC:TermGenie, PMID:17085965]
+synonym: "growing cell tip plasma membrane part" EXACT [GOC:TermGenie]
+synonym: "plasma membrane part of growing cell end" EXACT [GOC:TermGenie]
+synonym: "plasma membrane part of growing cell tip" EXACT [GOC:TermGenie]
+is_a: GO:0031520 ! plasma membrane of cell tip
+created_by: mah
+creation_date: 2014-04-22T16:02:06Z
+
+[Term]
+id: GO:1903349
+name: omegasome membrane
+namespace: cellular_component
+def: "Any membrane that is part of an omegasome." [GO_REF:0000064, GOC:mf, GOC:TermGenie, PMID:18725538, PMID:24591649]
+is_a: GO:0098588 ! bounding membrane of organelle
+created_by: pr
+creation_date: 2014-08-19T12:33:09Z
+
+[Term]
+id: GO:1904930
+name: amphisome membrane
+namespace: cellular_component
+def: "Any membrane that is part of an amphisome." [GO_REF:0000064, GOC:bhm, GOC:TermGenie, PMID:17984323]
+is_a: GO:0000421 ! autophagosome membrane
+created_by: pr
+creation_date: 2016-01-29T11:40:13Z
+
+[Term]
+id: GO:1990075
+name: periciliary membrane compartment
+namespace: cellular_component
+def: "A plasma membrane region adjacent to the base of eukaryotic cilia and flagella that is enriched in endocytosis-associated proteins and vesicles and that appears to regulate ciliary membrane homeostasis." [GOC:cilia, GOC:dr, GOC:krc, PMID:22342749]
+synonym: "PCMC" EXACT []
+is_a: GO:0098590 ! plasma membrane region
+created_by: pr
+creation_date: 2013-04-24T10:14:50Z
+
+[Term]
+id: GO:1990578
+name: perinuclear endoplasmic reticulum membrane
+namespace: cellular_component
+def: "The membrane of the perinuclear endoplasmic reticulum, which is the portion of endoplasmic reticulum, the intracellular network of tubules and cisternae, that occurs near the nucleus." [PMID:25454947]
+synonym: "perinuclear ER membrane" EXACT []
+is_a: GO:0031090 ! organelle membrane
+created_by: mcc
+creation_date: 2014-12-09T01:13:01Z
+
+[Term]
+id: GO:1990674
+name: Golgi cis cisterna membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the thin, flattened compartments that form the cis portion of the Golgi complex." [GOC:bhm, PMID:16038056, PMID:24119662]
+synonym: "cis-Golgi cisterna membrane" EXACT []
+synonym: "Golgi apparatus cis cisterna membrane" EXACT []
+is_a: GO:0032580 ! Golgi cisterna membrane
+created_by: bhm
+creation_date: 2015-03-02T11:48:00Z
+
+[Term]
+id: GO:1990675
+name: Golgi medial cisterna membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the thin, flattened compartments that form the medial portion of the Golgi complex." [GOC:bhm, PMID:16038056, PMID:24119662]
+synonym: "Golgi apparatus medial cisterna membrane" EXACT []
+synonym: "medial-Golgi cisterna membrane" EXACT []
+is_a: GO:0032580 ! Golgi cisterna membrane
+created_by: bhm
+creation_date: 2015-03-02T11:50:29Z
+
+[Term]
+id: GO:1990676
+name: Golgi trans cisterna membrane
+namespace: cellular_component
+def: "The lipid bilayer surrounding any of the thin, flattened compartments that form the trans portion of the Golgi complex." [GOC:bhm, PMID:16038056, PMID:24119662]
+synonym: "trans-Golgi cisterna membrane" EXACT []
+is_a: GO:0032580 ! Golgi cisterna membrane
+created_by: bhm
+creation_date: 2015-03-02T11:53:35Z
+
+[Term]
+id: GO:1990913
+name: sperm head plasma membrane
+namespace: cellular_component
+def: "The plasma membrane that is part of the head section of a sperm cell." [PMID:24478030]
+is_a: GO:0098590 ! plasma membrane region
+created_by: sl
+creation_date: 2015-12-07T23:14:04Z
 
 [Term]
 id: IAO:0000078
@@ -148,8 +2119,73 @@ property_value: IAO:0000119 "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>" xsd
 property_value: IAO:0000119 "OBI_0000266" xsd:string
 
 [Term]
-id: MEMON:0000000
-name: root node
+id: MEMON:0000001
+name: experimental membrane model
+def: "A membrane model that is used in experiments." []
+is_a: MEMON:0000008 ! membrane model
+relationship: RO:0002180 MEMON:0000004 ! has component membrane model component
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:48:12Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000002
+name: artificial lipid membrane
+def: "An experimental membrane model that is prepared from lipids." []
+comment: For example membrane consisting of DOPC.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:48:52Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000003
+name: chemical membrane model
+def: "An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior." []
+comment: For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:52:08Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000004
+name: membrane model component
+def: "A molecular component from which a membrane model consists." []
+is_a: BFO:0000004 ! independent continuant
+relationship: RO:0002180 MEMON:0000004 ! has component membrane model component
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:53:09Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000005
+name: computational membrane model
+def: "A membrane model that is used in computational predictions of membrane properties." []
+is_a: MEMON:0000008 ! membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:57:54Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000006
+name: QSAR membrane model
+def: "A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction." []
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:58:23Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000007
+name: simulated membrane
+def: "Computational membrane model that is used in membrane simulations." []
+comment: For example, a lipid bilayer assembled for molecular dynamics simulation.
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:58:59Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000008
+name: membrane model
+def: "A scientific model that is used to predict the properties of biological membranes." []
+is_a: BFO:0000004 ! independent continuant
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T16:21:07Z" xsd:dateTime
 
 [Term]
 id: PATO:0000001
@@ -1329,4 +3365,12 @@ property_value: dcterms:contributor https://orcid.org/0000-0002-8688-6599
 holds_over_chain: RO:0002212 RO:0019001
 holds_over_chain: RO:0002213 RO:0019002
 is_a: RO:0019000 ! regulates characteristic
+
+[Typedef]
+id: term_tracker_item
+name: term tracker item
+namespace: external
+xref: IAO:0000233
+is_metadata_tag: true
+is_class_level: true
 

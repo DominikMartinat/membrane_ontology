@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/memon/memon-simple.owl#"
      xml:base="http://purl.obolibrary.org/obo/memon/memon-simple.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/memon/memon-simple.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-02/memon-simple.owl"/>
-        <terms:description>None</terms:description>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/unspecified"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-09/memon-simple.owl"/>
+        <dc:description>An ontology about cell membranes and their models</dc:description>
+        <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
         <terms:title>Membrane Ontology</terms:title>
-        <owl:versionInfo>2024-12-02</owl:versionInfo>
+        <owl:versionInfo>2024-12-09</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -26,6 +29,108 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <obo:IAO_0000111 xml:lang="en">definition</obo:IAO_0000111>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">2012-04-05: 
+Barry Smith
+
+The official OBI definition, explaining the meaning of a class or property: &apos;Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions&apos;  is terrible.
+
+Can you fix to something like:
+
+A statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.
+
+Alan Ruttenberg
+
+Your proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can&apos;t be evaluated by those criteria. 
+
+On the specifics of the proposed definition:
+
+We don&apos;t have definitions of &apos;meaning&apos; or &apos;expression&apos; or &apos;property&apos;. For &apos;reference&apos; in the intended sense I think we use the term &apos;denotation&apos;. For &apos;expression&apos;, I think we you mean symbol, or identifier. For &apos;meaning&apos; it differs for class and property. For class we want documentation that let&apos;s the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let&apos;s the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The &apos;intended reader&apos; part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. 
+
+Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
+
+We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  </obo:IAO_0000116>
+        <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
+        <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</obo:IAO_0000119>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <rdfs:label>definition</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0001900 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0001900"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ro/subsets#ro-eco -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ro/subsets#ro-eco">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
     
 
 
@@ -59,6 +164,38 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002180 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115>w &apos;has component&apos; p if w &apos;has part&apos; p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type.</obo:IAO_0000115>
+        <obo:IAO_0000116>The definition of &apos;has component&apos; is still under discussion. The challenge is in providing a definition that does not imply transitivity.</obo:IAO_0000116>
+        <obo:IAO_0000232 xml:lang="en">For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like &apos;has part exactly 5 digit, you would instead use has_component exactly 5 digit.</obo:IAO_0000232>
+        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
+        <rdfs:label xml:lang="en">has component</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:Componency"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -70,10 +207,111 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/MEMON_0000000 -->
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000001 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000000">
-        <rdfs:label xml:lang="en">root node</rdfs:label>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A membrane model that is used in experiments.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:12Z</dc:date>
+        <rdfs:label xml:lang="en">experimental membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from lipids.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:48:52Z</dc:date>
+        <rdfs:comment>For example membrane consisting of DOPC.</rdfs:comment>
+        <rdfs:label xml:lang="en">artificial lipid membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000001"/>
+        <obo:IAO_0000115>An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:52:08Z</dc:date>
+        <rdfs:comment>For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.</rdfs:comment>
+        <rdfs:label xml:lang="en">chemical membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000004">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000004"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A molecular component from which a membrane model consists.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:53:09Z</dc:date>
+        <rdfs:label xml:lang="en">membrane model component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000005 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000008"/>
+        <obo:IAO_0000115>A membrane model that is used in computational predictions of membrane properties.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:57:54Z</dc:date>
+        <rdfs:label xml:lang="en">computational membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:23Z</dc:date>
+        <rdfs:label xml:lang="en">QSAR membrane model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MEMON_0000005"/>
+        <obo:IAO_0000115>Computational membrane model that is used in membrane simulations.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T15:58:59Z</dc:date>
+        <rdfs:comment>For example, a lipid bilayer assembled for molecular dynamics simulation.</rdfs:comment>
+        <rdfs:label xml:lang="en">simulated membrane</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/MEMON_0000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MEMON_0000008">
+        <obo:IAO_0000115>A scientific model that is used to predict the properties of biological membranes.</obo:IAO_0000115>
+        <dc:creator>Dominik Martinát</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-12-08T16:21:07Z</dc:date>
+        <rdfs:label xml:lang="en">membrane model</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 

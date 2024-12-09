@@ -1,15 +1,85 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-02/memon-base.owl
+data-version: memon/releases/2024-12-09/memon-base.owl
+idspace: cito http://purl.org/spar/cito/ 
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
+idspace: foaf http://xmlns.com/foaf/0.1/ 
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: skos http://www.w3.org/2004/02/skos/core# 
+idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
 ontology: memon/memon-base
+property_value: dce:description "An ontology about cell membranes and their models" xsd:string
 property_value: dce:type IAO:8000001
-property_value: dcterms:description "None" xsd:string
-property_value: dcterms:license https://creativecommons.org/licenses/unspecified
+property_value: dcterms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: dcterms:title "Membrane Ontology" xsd:string
-property_value: owl:versionInfo "2024-12-02" xsd:string
+property_value: owl:versionInfo "2024-12-09" xsd:string
 
 [Term]
-id: MEMON:0000000
-name: root node
+id: MEMON:0000001
+name: experimental membrane model
+def: "A membrane model that is used in experiments." []
+is_a: MEMON:0000008 ! membrane model
+relationship: RO:0002180 MEMON:0000004 ! membrane model component
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:48:12Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000002
+name: artificial lipid membrane
+def: "An experimental membrane model that is prepared from lipids." []
+comment: For example membrane consisting of DOPC.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:48:52Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000003
+name: chemical membrane model
+def: "An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior." []
+comment: For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:52:08Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000004
+name: membrane model component
+def: "A molecular component from which a membrane model consists." []
+is_a: BFO:0000004
+relationship: RO:0002180 MEMON:0000004 ! membrane model component
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:53:09Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000005
+name: computational membrane model
+def: "A membrane model that is used in computational predictions of membrane properties." []
+is_a: MEMON:0000008 ! membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:57:54Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000006
+name: QSAR membrane model
+def: "A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction." []
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:58:23Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000007
+name: simulated membrane
+def: "Computational membrane model that is used in membrane simulations." []
+comment: For example, a lipid bilayer assembled for molecular dynamics simulation.
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T15:58:59Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000008
+name: membrane model
+def: "A scientific model that is used to predict the properties of biological membranes." []
+is_a: BFO:0000004
+property_value: dce:creator "Dominik Martinát" xsd:string
+property_value: dce:date "2024-12-08T16:21:07Z" xsd:dateTime
 

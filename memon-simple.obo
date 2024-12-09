@@ -1,14 +1,90 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-02/memon-simple.owl
+data-version: memon/releases/2024-12-09/memon-simple.owl
+subsetdef: ro-eco ""
+idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: memon/memon-simple
-property_value: owl:versionInfo "2024-12-02" xsd:string
-property_value: terms:description "None" xsd:string
-property_value: terms:license https://creativecommons.org/licenses/unspecified
+property_value: dc:description "An ontology about cell membranes and their models" xsd:string
+property_value: owl:versionInfo "2024-12-09" xsd:string
+property_value: terms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: terms:title "Membrane Ontology" xsd:string
 
 [Term]
-id: MEMON:0000000
-name: root node
+id: MEMON:0000001
+name: experimental membrane model
+def: "A membrane model that is used in experiments." []
+is_a: MEMON:0000008 ! membrane model
+relationship: RO:0002180 MEMON:0000004 ! has component membrane model component
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:48:12Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000002
+name: artificial lipid membrane
+def: "An experimental membrane model that is prepared from lipids." []
+comment: For example membrane consisting of DOPC.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:48:52Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000003
+name: chemical membrane model
+def: "An experimental membrane model that is prepared from non-lipid chemicals that mimic lipid behavior." []
+comment: For example, 1-octanol in water is commonly used to predict the partition coefficient of molecules between hydrophilic and lipophilic environments.
+is_a: MEMON:0000001 ! experimental membrane model
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:52:08Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000004
+name: membrane model component
+def: "A molecular component from which a membrane model consists." []
+relationship: RO:0002180 MEMON:0000004 ! has component membrane model component
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:53:09Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000005
+name: computational membrane model
+def: "A membrane model that is used in computational predictions of membrane properties." []
+is_a: MEMON:0000008 ! membrane model
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:57:54Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000006
+name: QSAR membrane model
+def: "A computational membrane model that is utilized for Quantitative Structure–Activity Relationship (QSAR) prediction." []
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:58:23Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000007
+name: simulated membrane
+def: "Computational membrane model that is used in membrane simulations." []
+comment: For example, a lipid bilayer assembled for molecular dynamics simulation.
+is_a: MEMON:0000005 ! computational membrane model
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T15:58:59Z" xsd:dateTime
+
+[Term]
+id: MEMON:0000008
+name: membrane model
+def: "A scientific model that is used to predict the properties of biological membranes." []
+property_value: dc:creator "Dominik Martinát" xsd:string
+property_value: dc:date "2024-12-08T16:21:07Z" xsd:dateTime
+
+[Typedef]
+id: RO:0002180
+name: has component
+def: "w 'has component' p if w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
+subset: ro-eco
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000116 "The definition of 'has component' is still under discussion. The challenge is in providing a definition that does not imply transitivity." xsd:string
+property_value: IAO:0000232 "For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like 'has part exactly 5 digit, you would instead use has_component exactly 5 digit." xsd:string
+property_value: RO:0001900 RO:0001901
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
 
