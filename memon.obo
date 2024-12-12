@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2024-12-09
+data-version: releases/2024-12-12
 subsetdef: gocheck_do_not_annotate ""
 subsetdef: goslim_agr ""
 subsetdef: goslim_candida ""
@@ -33,10 +33,10 @@ idspace: swrl http://www.w3.org/2003/11/swrl#
 idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
 idspace: swrlb http://www.w3.org/2003/11/swrlb# 
 ontology: memon
-property_value: dce:description "An ontology about cell membranes and their models" xsd:string
+property_value: dcterms:description "An ontology about cell membranes and their models" xsd:string
 property_value: dcterms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: dcterms:title "Membrane Ontology" xsd:string
-property_value: owl:versionInfo "2024-12-09" xsd:string
+property_value: owl:versionInfo "2024-12-12" xsd:string
 
 [Term]
 id: BFO:0000002
