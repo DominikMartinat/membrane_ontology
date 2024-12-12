@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: memon/releases/2024-12-09/memon-base.owl
+data-version: memon/releases/2024-12-12/memon-base.owl
 idspace: cito http://purl.org/spar/cito/ 
 idspace: dce http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
@@ -8,11 +8,11 @@ idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl#
 idspace: skos http://www.w3.org/2004/02/skos/core# 
 idspace: swrla http://swrl.stanford.edu/ontologies/3.3/swrla.owl# 
 ontology: memon/memon-base
-property_value: dce:description "An ontology about cell membranes and their models" xsd:string
 property_value: dce:type IAO:8000001
+property_value: dcterms:description "An ontology about cell membranes and their models" xsd:string
 property_value: dcterms:license https://creativecommons.org/publicdomain/zero/1.0/
 property_value: dcterms:title "Membrane Ontology" xsd:string
-property_value: owl:versionInfo "2024-12-09" xsd:string
+property_value: owl:versionInfo "2024-12-12" xsd:string
 
 [Term]
 id: MEMON:0000001

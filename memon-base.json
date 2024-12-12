@@ -3,11 +3,11 @@
     "id" : "http://purl.obolibrary.org/obo/memon/memon-base.json",
     "meta" : {
       "basicPropertyValues" : [ {
-        "pred" : "http://purl.org/dc/elements/1.1/description",
-        "val" : "An ontology about cell membranes and their models"
-      }, {
         "pred" : "http://purl.org/dc/elements/1.1/type",
         "val" : "http://purl.obolibrary.org/obo/IAO_8000001"
+      }, {
+        "pred" : "http://purl.org/dc/terms/description",
+        "val" : "An ontology about cell membranes and their models"
       }, {
         "pred" : "http://purl.org/dc/terms/license",
         "val" : "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -16,9 +16,9 @@
         "val" : "Membrane Ontology"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2024-12-09"
+        "val" : "2024-12-12"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-09/memon-base.json"
+      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-12/memon-base.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000004",
@@ -171,11 +171,11 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
-      "id" : "http://purl.org/dc/elements/1.1/description",
+      "id" : "http://purl.org/dc/elements/1.1/type",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
-      "id" : "http://purl.org/dc/elements/1.1/type",
+      "id" : "http://purl.org/dc/terms/description",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {

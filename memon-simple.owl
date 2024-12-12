@@ -12,11 +12,11 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/memon/memon-simple.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-09/memon-simple.owl"/>
-        <dc:description>An ontology about cell membranes and their models</dc:description>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/memon/releases/2024-12-12/memon-simple.owl"/>
+        <terms:description>An ontology about cell membranes and their models</terms:description>
         <terms:license rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
         <terms:title>Membrane Ontology</terms:title>
-        <owl:versionInfo>2024-12-09</owl:versionInfo>
+        <owl:versionInfo>2024-12-12</owl:versionInfo>
     </owl:Ontology>
     
 

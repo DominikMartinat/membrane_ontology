@@ -3,7 +3,7 @@
     "id" : "http://purl.obolibrary.org/obo/memon.json",
     "meta" : {
       "basicPropertyValues" : [ {
-        "pred" : "http://purl.org/dc/elements/1.1/description",
+        "pred" : "http://purl.org/dc/terms/description",
         "val" : "An ontology about cell membranes and their models"
       }, {
         "pred" : "http://purl.org/dc/terms/license",
@@ -13,9 +13,9 @@
         "val" : "Membrane Ontology"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2024-12-09"
+        "val" : "2024-12-12"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-09/memon.json"
+      "version" : "http://purl.obolibrary.org/obo/memon/releases/2024-12-12/memon.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000002",
